@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>@ViewData["Title"] - PLAYLIST BUILDER </title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold fs-3">
+				🔐 PLAYLIST BUILDER
+            </a>
+
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+
+            <div class="collapse navbar-collapse" id="menu">
+
+
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            🏠 HOME
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            🔑 LOGIN
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            ⚙ SERVICES
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            ℹ ABOUT
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            ☎ CONTACTS
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+
+    </nav>
+
+    <section class="hero">
+
+        <div class="container">
+
+
+        </div>
+
+
+    </section>
+
+    <div class="container">
+
+
+        <div class="glass-card p-5 mb-5">
+
+
+            @RenderBody()
+
+
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="glass-card feature-card">
+
+
+                    <h1>
+                        🔒
+                    </h1>
+
+
+                    <h3>
+                        SECURED LOGIN
+                    </h3>
+
+
+                    <p>
+                        PROTECTED LOGIN DATA
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="col-md-4">
+
+                <div class="glass-card feature-card">
+
+
+                    <h1>
+                        ⚡
+                    </h1>
+
+
+                    <h3>
+						ACCESS DATA VALIDATIONS
+                    </h3>
+
+                    <p>
+						Values are validated before being stored in the builder.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="col-md-4">
+
+                <div class="glass-card feature-card">
+
+
+                    <h1>
+                        💻
+                    </h1>
+
+
+                    <h3>
+						QUICK PROCESSES BUILDER
+                    </h3>
+
+
+                    <p>
+                        C#, Razor Views, Bootstrap and MVC.
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <section class="technology text-center">
+
+		<h1>
+			TECHNOLOGIES AVAILABLE
+
+            </h1>
+
+        <span>
+            ASP.NET Core MVC
+        </span>
+
+        <span>
+            C#
+        </span>
+
+        <span>
+            Bootstrap 5
+        </span>
+
+        <span>
+            Razor Views
+        </span>
+
+
+    </section>
+
+
+    <footer>
+
+        <p>
+
+			© 2026 PLAYLIST BUILDER. All rights reserved.
+
+        </p>
+
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+
+</html>

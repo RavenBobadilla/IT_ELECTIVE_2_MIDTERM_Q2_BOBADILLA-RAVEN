@@ -1,0 +1,50 @@
+﻿@model List<PlaylistApp.Models.Entities.Playlist>
+@{
+	ViewData["Title"] = "DASHBOARD";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-success text-white">
+            <h3>Welcome @ViewBag.Username 🎶</h3>
+        </div>
+
+        <div class="card-body">
+            <h4>Playlists Available</h4>
+            <hr />
+
+            <a asp-action="Create" class="btn btn-primary me-2">
+                <i class="bi bi-plus-circle"></i> Create Playlist
+            </a>
+            <a asp-controller="Auth" asp-action="Logout" class="btn btn-danger">
+                <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+
+            <div class="mt-4">
+                @if (Model.Any())
+                {
+                    <ul class="list-group">
+                        @foreach (var p in Model)
+                        {
+                            <li class="list-group-item">
+                                <strong>@p.Title</strong> <span class="text-muted">by @p.CreatorName</span>
+                                <ul class="mt-2">
+                                    @foreach (var v in p.Videos)
+                                    {
+                                        <li>
+                                            <a href="@v.YouTubeUrl" target="_blank">@v.YouTubeUrl</a> - @v.TrackNote
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No playlists yet. Create one above!</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

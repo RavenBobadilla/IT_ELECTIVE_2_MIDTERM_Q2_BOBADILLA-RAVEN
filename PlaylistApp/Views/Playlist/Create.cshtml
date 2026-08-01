@@ -1,0 +1,70 @@
+﻿@model PlaylistApp.Models.DTOs.CreatePlaylistDto
+@{
+	ViewData["Title"] = "CREATE PLAYLIST";
+}
+
+<div class="container mt-5" style="max-width:700px;">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3><i class="bi bi-plus-circle"></i> Create New Playlist</h3>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create" method="post" id="playlistForm">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Playlist title" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <h5 class="mt-4">Videos</h5>
+                <hr />
+                <div id="videosContainer">
+                    <div class="video-item mb-3">
+                        <label>YouTube URL</label>
+                        <input name="Videos[0].YouTubeUrl" class="form-control" placeholder="https://youtube.com/..." />
+
+                        <label class="mt-2">Track Note</label>
+                        <input name="Videos[0].TrackNote" class="form-control" placeholder="Description or note" />
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary mt-3" id="addVideoBtn">
+                    <i class="bi bi-plus"></i> Add Another Video
+                </button>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-save"></i> Save Playlist
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        let videoIndex = 1;
+        document.getElementById("addVideoBtn").addEventListener("click", function () {
+            const container = document.getElementById("videosContainer");
+            const newVideo = document.createElement("div");
+            newVideo.classList.add("video-item", "mb-3");
+            newVideo.innerHTML = `
+                <label>YouTube URL</label>
+                <input name="Videos[${videoIndex}].YouTubeUrl" class="form-control" placeholder="https://youtube.com/..." />
+
+                <label class="mt-2">Track Note</label>
+                <input name="Videos[${videoIndex}].TrackNote" class="form-control" placeholder="Description or note" />
+            `;
+            container.appendChild(newVideo);
+            videoIndex++;
+        });
+    </script>
+}
