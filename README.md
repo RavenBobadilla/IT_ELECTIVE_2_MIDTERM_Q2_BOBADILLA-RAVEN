@@ -1,5 +1,5 @@
-# NAME : BOBADILLA, RAVEN RAY MARQUEZ.
-# COURSE / SECTION : BSIT31E3 - IRREGULAR
-# DATE OF SUBMISSION : 08/01/2026
-# COURSE SUBJECT CODE : WEB SYSTEMS AND TECHNOLOGIES - IT ELECTIVE II
-# QUIZ 2 - PLAYLIST BUILDER
+# Name : Bobadilla, Raven Ray Marquez.
+# Course / Section : BSIT31E3 - Irregular Student
+# Date Of Submission : 08/01/2026
+# Course Subject Code : Web Systems and Technologies - IT Elective II
+# Quiz 2 - Playlist Builder
